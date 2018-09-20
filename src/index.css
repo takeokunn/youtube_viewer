@@ -1,5 +1,4 @@
-body {
-    color: #484848;
-    font-family: Circular, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "MS Gothic", "ＭＳ ゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    -webkit-font-smoothing: antialiased;
+.right_block {
+    height: calc(100vh - 20px);
+    padding: 5px;
 }

@@ -1,0 +1,12 @@
+.block {
+    display: flex;
+    height: 60px;
+    margin-bottom: 5px;
+    border: 1px solid #EBEBEB;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.icon_block {
+    padding: 17px 10px;
+}
