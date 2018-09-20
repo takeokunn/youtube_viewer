@@ -1,0 +1,125 @@
+body {
+    color: #484848;
+    font-family: 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo,Osaka, 'ＭＳ Ｐゴシック',
+    'MS PGothic', 'MS Gothic', 'ＭＳ ゴシック', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin: 5px;
+    background-color: red;
+}
+
+.replay-list {
+    height: calc(100vh - 20px);
+    background: blue;
+    overflow-y: scroll;
+}
+
+.replay-block {
+    position: relative;
+    display: flex;
+    margin: 10px;
+    height: 320px;
+    width: calc(100% - 20px);
+    background-color: pink;
+}
+
+.replay-close-block {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+
+}
+
+.replay-video-block {
+    width: calc(100% - 200px);
+}
+
+.replay-video-block > iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.replay-side-block {
+    width: 200px;
+    height: 100%;
+}
+
+ul.replay-comment-block {
+    height: 290px;
+    overflow-y: scroll;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+ul.replay-comment-block > li {
+    display: flex;
+    padding: 10px 5px;
+    background-color: gray;
+}
+
+ul.replay-comment-block > li > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+ul.replay-comment-block > li > div {
+    width: calc(100% - 40px);
+    padding: 0 5px;
+}
+
+ul.replay-comment-block > li > div > p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.replay-info-block {
+    height: 30px;
+}
+
+.replay-info-block > span {
+    font-size: 12px;
+}
+
+.video-list {
+    height: calc(100vh - 20px);
+    background: green;
+}
+
+.video-search-block {
+    background-color: pink;
+    height: 60px;
+}
+
+.video-search-block > select {
+    background-color: yellow;
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.video-list-block {
+    height: calc(100% - 60px);
+    background-color: purple;
+    overflow-y: scroll;
+}
+
+.video-block {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: cyan;
+}
+
+.video-block > img {
+    width: 100%;
+}
+
+.video-block > p {
+    font-size: 13px;
+    margin: 0 0 5px 0;
+}
