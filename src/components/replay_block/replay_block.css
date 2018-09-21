@@ -11,7 +11,11 @@
 .close {
     position: absolute;
     top: -11px;
-    right: -8px;
+    right: -10px;
+}
+
+.close > svg {
+    font-size: 18px;
 }
 
 .video {

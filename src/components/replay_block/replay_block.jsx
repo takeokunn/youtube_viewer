@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import * as aaa from '@fortawesome/free-solid-svg-icons';
 
 import Icon from 'Assets/icon.png';
 import styles from './replay_block.css';
