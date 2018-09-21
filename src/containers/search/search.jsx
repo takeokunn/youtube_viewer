@@ -16,7 +16,7 @@ class Search extends React.Component {
                     <FontAwesomeIcon icon="search" />
                 </div>
                 <div className={ styles.youtuber_block }>
-                    <p>木下ゆうか</p>
+                    <p className={ styles.p }>木下ゆうか</p>
                 </div>
             </div>
         );

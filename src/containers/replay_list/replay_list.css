@@ -1,5 +1,9 @@
 .block {
     height: calc(100vh - 20px);
-    margin: 5px;
+    padding: 10px 5px;
     overflow-y: scroll;
+}
+
+.block::-webkit-scrollbar {
+    display: none;
 }

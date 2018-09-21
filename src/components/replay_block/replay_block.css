@@ -1,0 +1,101 @@
+.block {
+    position: relative;
+    display: flex;
+    margin: 0 10px 20px 10px;
+    height: 320px;
+    width: calc(100% - 20px);
+    border: 1px solid #EBEBEB;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.close {
+    position: absolute;
+    top: -11px;
+    right: -8px;
+}
+
+.video {
+    width: calc(100% - 200px);
+}
+
+.video > iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.side {
+    width: 200px;
+    height: 100%;
+}
+
+.ul {
+    height: 290px;
+    overflow-y: scroll;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.ul::-webkit-scrollbar {
+    display: none;
+}
+
+
+.ul > li {
+    display: flex;
+    padding: 10px 5px;
+}
+
+.ul > li > img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.ul > li > div {
+    width: calc(100% - 40px);
+    padding: 0 5px;
+}
+
+.ul > li > div > p {
+    margin: 0;
+    font-size: 10px;
+}
+
+.info {
+    height: 30px;
+}
+
+.info {
+    display: flex;
+    padding-left: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+.li {
+    width: 50%;
+    padding: 0 5px;
+}
+
+.li:first-of-type {
+    text-align: right;
+}
+
+.li:last-of-type {
+    text-align: left;
+}
+
+.li > span {
+    font-size: 12px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.good {
+    color: #008489;
+}
+
+.bad {
+    color: #ff5a5f;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from './replay_list.css';
+import ReplayBlock from 'Components/replay_block/replay_block';
 
 class ReplayList extends React.Component {
 
@@ -11,7 +12,7 @@ class ReplayList extends React.Component {
     render() {
         return (
             <div className={ styles.block }>
-                <p>fdasfas</p>
+                <ReplayBlock />
             </div>
         );
     }

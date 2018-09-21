@@ -8,5 +8,16 @@
 }
 
 .icon_block {
-    padding: 17px 10px;
+    padding: 20px 10px 0 10px;
+}
+
+.icon_block > svg {
+    font-size: 18px;
+}
+
+.youtuber_block {}
+
+.p {
+    margin: 19px 0 0 0;
+    font-size: 16px;
 }

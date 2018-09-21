@@ -7,10 +7,9 @@ import ReplayList from 'Containers/replay_list/';
 import MovieList from 'Containers/movie_list/';
 
 // for font-awesome
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faSearch)
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSearch, faThumbsUp, faThumbsDown, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+library.add(faSearch, faThumbsUp, faThumbsDown, faTimesCircle);
 
 import './bootstrap.css';
 import styles from './index.css';

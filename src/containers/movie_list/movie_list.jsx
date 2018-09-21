@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from './movie_list.css';
+import MovieBlock from 'Components/movie_block/movie_block';
 
 class MovieList extends React.Component {
 
@@ -11,7 +12,11 @@ class MovieList extends React.Component {
     render() {
         return (
             <div className={ styles.block }>
-                <p>fdasfas</p>
+                <MovieBlock />
+                <MovieBlock />
+                <MovieBlock />
+                <MovieBlock />
+                <MovieBlock />
             </div>
         );
     }
