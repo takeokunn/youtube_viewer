@@ -5,18 +5,21 @@ import MovieBlock from 'Components/movie_block/movie_block';
 
 class MovieList extends React.Component {
 
-    constructor() {
-        super();
+    renderMovieBlock() {
+        return this.props.youtube.search_videos.map((video, index) => (
+            <MovieBlock
+                key={ index }
+                index={ index }
+                title={ video.title }
+                thumbnail_url={ video.thumbnail_url }
+                handleClick={ this.props.addToReplayList } />
+        ))
     }
 
     render() {
         return (
             <div className={ styles.block }>
-                <MovieBlock />
-                <MovieBlock />
-                <MovieBlock />
-                <MovieBlock />
-                <MovieBlock />
+                { ::this.renderMovieBlock() }
             </div>
         );
     }

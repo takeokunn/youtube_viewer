@@ -1,12 +1,23 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './search.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import options from 'Options/youtuber.json';
 
 class Search extends React.Component {
 
-    constructor() {
-        super();
+    componentDidMount() {
+        const channel_id = options.data[0].channel_id;
+        this.props.fetchChannelVideo(channel_id);
+    }
+
+    handleChange(e) {
+        const channel_id = e.target.value;
+        this.props.fetchChannelVideo(channel_id);
+    }
+
+    renderOptions() {
+        return options.data.map((elem, index) => <option key={ `search_${index}` } value={ elem.channel_id }>{ elem.name }</option>);
     }
 
     render() {
@@ -16,7 +27,9 @@ class Search extends React.Component {
                     <FontAwesomeIcon icon="search" />
                 </div>
                 <div className={ styles.youtuber_block }>
-                    <p className={ styles.p }>木下ゆうか</p>
+                    <select onChange={ ::this.handleChange }>
+                        { this.renderOptions() }
+                    </select>
                 </div>
             </div>
         );

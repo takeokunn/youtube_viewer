@@ -5,14 +5,21 @@ import ReplayBlock from 'Components/replay_block/replay_block';
 
 class ReplayList extends React.Component {
 
-    constructor() {
-        super();
+    renderReplayBlock() {
+        return this.props.youtube.replay_videos.map((video, index) => (
+            <ReplayBlock
+                key={ index }
+                index={ index }
+                video_id={ video.video_id }
+                comments={ video.comments }
+                handleClose={ this.props.handleClose } />
+        ));
     }
 
     render() {
         return (
             <div className={ styles.block }>
-                <ReplayBlock />
+                { ::this.renderReplayBlock() }
             </div>
         );
     }

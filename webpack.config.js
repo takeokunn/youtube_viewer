@@ -1,4 +1,5 @@
 const path = require('path');
+const dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: 'development',
@@ -17,6 +18,13 @@ module.exports = {
                 { loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]&sourceMap' }
             ]
         }, {
+            test: /\.scss$/,
+            use: [
+                { loader: 'style-loader' },
+                { loader: 'css-loader' },
+                { loader: 'sass-loader' }
+            ]
+        }, {
             test: /\.(woff|woff2|ttf|eot|svg|png|gif|jpg)$/,
             use: {
                 loader: 'file-loader'
@@ -24,6 +32,7 @@ module.exports = {
         }]
     },
     resolve: {
+        modules: [path.resolve(__dirname), 'node_modules'],
         extensions: ['.js', '.jsx'],
         alias: {
             Actions: path.resolve(__dirname, 'src/actions/'),
@@ -31,6 +40,7 @@ module.exports = {
             Components: path.resolve(__dirname, 'src/components/'),
             Constants: path.resolve(__dirname, 'src/constants/'),
             Containers: path.resolve(__dirname, 'src/containers/'),
+            Options: path.resolve(__dirname, 'src/options/'),
             Reducers: path.resolve(__dirname, 'src/reducers/'),
             Sagas: path.resolve(__dirname, 'src/sagas/'),
             Services: path.resolve(__dirname, 'src/services/'),
@@ -43,5 +53,8 @@ module.exports = {
     },
     serve: {
         content: [path.resolve(__dirname, 'public')]
-    }
+    },
+    plugins: [
+        new dotenv()
+    ]
 };

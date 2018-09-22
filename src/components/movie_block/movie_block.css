@@ -11,28 +11,3 @@
     font-size: 12px;
     font-weight: bold;
 }
-
-.ul {
-    display: flex;
-    padding-left: 0;
-    list-style-type: none;
-    margin: 0;
-}
-
-.li {
-    padding: 0 5px;
-}
-
-.li > span {
-    font-size: 10px;
-    font-weight: bold;
-    margin-right: 3px;
-}
-
-.good {
-    color: #008489;
-}
-
-.bad {
-    color: #ff5a5f;
-}

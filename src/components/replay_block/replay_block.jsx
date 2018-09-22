@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,79 +8,38 @@ import styles from './replay_block.css';
 
 class ReplayBlock extends React.Component {
 
-    constructor() {
-        super();
+    handleClose() {
+        this.props.handleClose(this.props.index);
+    }
+
+    renderComments() {
+        return this.props.comments.map((comment, index) => (
+            <li key={ index }>
+                <img src={ comment.image_url } />
+                <div>
+                    <p>{ comment.text }</p>
+                </div>
+            </li>
+        ));
     }
 
     render() {
+        const video_src = `https://www.youtube.com/embed/${this.props.video_id}`;
         return (
             <div className={ styles.block }>
-                <div className={ styles.close }>
+                <div onClick={ ::this.handleClose } className={ styles.close }>
                     <FontAwesomeIcon icon={ faTimesCircle } />
                 </div>
                 <div className={ styles.video }>
                     <iframe
-                        src="https://www.youtube.com/embed/ZF6WOcbI0Zk"
+                        src={ video_src }
                         frameBorder="0"
                         allow="autoplay; encrypted-media"
                         allowFullScreen></iframe>
                 </div>
                 <div className={ styles.side }>
                     <ul className={ styles.ul }>
-                        <li>
-                            <img src={ Icon } />
-                            <div>
-                                <p>みんなレベル10にしてヒカキンスキンゲットしてみてねー！😎👍﻿</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={ Icon } />
-                            <div>
-                                <p>みんなレベル10にしてヒカキンスキンゲットしてみてねー！😎👍﻿</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={ Icon } />
-                            <div>
-                                <p>みんなレベル10にしてヒカキンスキンゲットしてみてねー！😎👍﻿</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={ Icon } />
-                            <div>
-                                <p>みんなレベル10にしてヒカキンスキンゲットしてみてねー！😎👍﻿</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={ Icon } />
-                            <div>
-                                <p>みんなレベル10にしてヒカキンスキンゲットしてみてねー！😎👍﻿</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={ Icon } />
-                            <div>
-                                <p>みんなレベル10にしてヒカキンスキンゲットしてみてねー！😎👍﻿</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={ Icon } />
-                            <div>
-                                <p>みんなレベル10にしてヒカキンスキンゲットしてみてねー！😎👍﻿</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={ Icon } />
-                            <div>
-                                <p>みんなレベル10にしてヒカキンスキンゲットしてみてねー！😎👍﻿</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={ Icon } />
-                            <div>
-                                <p>みんなレベル10にしてヒカキンスキンゲットしてみてねー！😎👍﻿</p>
-                            </div>
-                        </li>
+                        { ::this.renderComments() }
                     </ul>
                     <ul className={ styles.info }>
                         <li className={ styles.li }>
@@ -99,6 +59,12 @@ class ReplayBlock extends React.Component {
             </div>
         );
     }
+}
+
+ReplayBlock.propTypes = {
+    index: PropTypes.number.isRequired,
+    video_id: PropTypes.string.isRequired,
+    handleClose: PropTypes.func.isRequired
 }
 
 export default ReplayBlock;

@@ -1,34 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './movie_block.css';
-import no_image from 'Assets/no_image.png';
 
 class MovieBlock extends React.Component {
 
-    constructor() {
-        super();
+    handleClick() {
+        this.props.handleClick(this.props.index);
     }
 
     render() {
         return (
             <div className={ styles.block }>
-                <img src={ no_image } className={ styles.img } />
-                <p className={ styles.title }>【青鬼オンライン】ついに1位で青逃成功!? ヒカキンスキンゲットw</p>
-                <ul className={ styles.ul }>
-                    <li className={ styles.li }>
-                        <span className={ styles.good }><FontAwesomeIcon icon={ faThumbsUp } /></span>
-                        <span>15000</span>
-                    </li>
-                    <li className={ styles.li }>
-                        <span className={ styles.bad }><FontAwesomeIcon icon={ faThumbsDown } /></span>
-                        <span>800</span>
-                    </li>
-                </ul>
+                <img
+                    src={ this.props.thumbnail_url }
+                    alt={ this.props.title }
+                    className={ styles.img }
+                    onClick={ ::this.handleClick } />
+                <p className={ styles.title }>{ this.props.title }</p>
             </div>
         );
     }
+}
+
+MovieBlock.propTypes = {
+    index: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    thumbnail_url: PropTypes.string.isRequired,
+    handleClick: PropTypes.func.isRequired
 }
 
 export default MovieBlock;
