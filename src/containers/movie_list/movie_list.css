@@ -1,5 +1,5 @@
 .block {
-    height: calc(100% - 65px);
+    height: calc(100% - 45px);
     overflow-y: scroll;
     border: 1px solid #EBEBEB;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);

@@ -2,12 +2,15 @@
     position: relative;
     display: flex;
     margin: 0 10px 20px 10px;
-    height: 320px;
+    height: 310px;
     width: calc(100% - 20px);
     border: 1px solid #EBEBEB;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/**
+ * close
+ */
 .close {
     position: absolute;
     top: -11px;
@@ -18,8 +21,11 @@
     font-size: 18px;
 }
 
+/**
+ * video
+ */
 .video {
-    width: calc(100% - 200px);
+    width: calc(100% - 400px);
 }
 
 .video > iframe {
@@ -27,79 +33,93 @@
     height: 100%;
 }
 
-.side {
+/**
+ * info
+ */
+.info {
+    width: 200px;
+    height: 100%;
+    border-right: 1px solid #ddd;
+}
+
+.info > div {
+    padding: 10px 5px;
+    height: calc(100% - 70px);
+    overflow-y: scroll;
+}
+
+.info > div > p:first-of-type {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.info > div > p:last-of-type {
+    font-size: 10px;
+    margin-top: 0;
+}
+
+.info > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.info > ul > li {
+    font-size: 10px;
+    padding: 5px 0 0 20px;
+}
+
+.info > ul > li > span {
+    margin-left: 5px;
+}
+
+.heart {
+    color: #FF5A5F;
+}
+
+/**
+ * comment
+ */
+.comment {
     width: 200px;
     height: 100%;
 }
 
-.ul {
-    height: 290px;
+.comment > ul {
+    height: 100%;
     overflow-y: scroll;
     list-style: none;
     padding-left: 0;
     margin: 0;
 }
 
-.ul::-webkit-scrollbar {
+.comment > ul::-webkit-scrollbar {
     display: none;
 }
 
 
-.ul > li {
+.comment > ul > li {
     display: flex;
     padding: 10px 5px;
 }
 
-.ul > li > img {
-    width: 30px;
-    height: 30px;
+.comment > ul > li > img {
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
 }
 
-.ul > li > div {
-    width: calc(100% - 40px);
+.comment > ul > li > div {
+    width: calc(100% - 35px);
     padding: 0 5px;
 }
 
-.ul > li > div > p {
+.comment > ul > li > div > p {
     margin: 0;
     font-size: 10px;
-}
-
-.info {
-    height: 30px;
-}
-
-.info {
-    display: flex;
-    padding-left: 0;
-    list-style-type: none;
-    margin: 0;
-}
-
-.li {
-    width: 50%;
-    padding: 0 5px;
-}
-
-.li:first-of-type {
-    text-align: right;
-}
-
-.li:last-of-type {
-    text-align: left;
-}
-
-.li > span {
-    font-size: 12px;
-    margin-right: 5px;
-    font-weight: bold;
-}
-
-.good {
-    color: #008489;
-}
-
-.bad {
-    color: #ff5a5f;
 }

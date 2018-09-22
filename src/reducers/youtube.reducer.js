@@ -1,7 +1,7 @@
 import { YOUTUBE }  from 'Constants/action_type.constant';
 
 const initialState = {
-    isFetching: false,
+    is_fetching: false,
     search_videos: [],
     replay_videos: []
 };
@@ -9,36 +9,41 @@ const initialState = {
 const channel_video = (state, action) => {
     switch (action.type) {
     case YOUTUBE.FETCH_CHANNEL_VIDEO_REQUEST:
-        return { ...state, isFetching: true };
+        return { ...state, is_fetching: true };
     case YOUTUBE.FETCH_CHANNEL_VIDEO_SUCCESS:
         return {
             ...state,
-            isFetching: false,
+            is_fetching: false,
             search_videos: action.payload.data.items.map(item => ({
                 title: item.snippet.title,
                 description: item.snippet.description,
                 thumbnail_url: item.snippet.thumbnails.medium.url,
                 video_id: item.id.videoId,
-                comments: []
+                comments: [],
+                comment_count: null,
+                dislike_count: null,
+                favorite_count: null,
+                like_count: null,
+                view_count: null,
             }))
         };
     case YOUTUBE.FETCH_CHANNEL_VIDEO_FAILURE:
-        return { ...state, isFetching: false };
+        return { ...state, is_fetching: false };
     }
 };
 
 const comments = (state, action) => {
     switch (action.type) {
     case YOUTUBE.FETCH_COMMENTS_REQUEST:
-        return { ...state, isFetching: true };
+        return { ...state, is_fetching: true };
     case YOUTUBE.FETCH_COMMENTS_SUCCESS:
+        const replay_index = action.payload.replay_index;
+        const data = action.payload.data;
         return {
             ...state,
             replay_videos: state.replay_videos.map((video, index) => {
-                console.log(index)
-                console.log(action.payload.replay_index)
-                if (index === action.payload.replay_index) {
-                    video.comments = action.payload.data.items.map(item => {
+                if (index === replay_index) {
+                    video.comments = data.items.map(item => {
                         return {
                             image_url: item.snippet.topLevelComment.snippet.authorProfileImageUrl,
                             text: item.snippet.topLevelComment.snippet.textOriginal
@@ -47,10 +52,36 @@ const comments = (state, action) => {
                 }
                 return video;
             }),
-            isFetching: false
+            is_fetching: false
         };
     case YOUTUBE.FETCH_COMMENTS_FAILURE:
-        return { ...state, isFetching: false };
+        return { ...state, is_fetching: false };
+    }
+};
+
+const video_statistics = (state, action) => {
+    switch (action.type) {
+    case YOUTUBE.FETCH_VIDEO_STATISTICS_REQUEST:
+        return { ...state, is_fetching: true };
+    case YOUTUBE.FETCH_VIDEO_STATISTICS_SUCCESS:
+        const replay_index = action.payload.replay_index;
+        const statistics = action.payload.data.items[0].statistics;
+        return {
+            ...state,
+            replay_videos: state.replay_videos.map((video, index) => {
+                if (index === replay_index) {
+                    video.comment_count = statistics.commentCount;
+                    video.dislike_count = statistics.dislikeCount;
+                    video.favorite_count = statistics.favoriteCount;
+                    video.like_count = statistics.likeCount;
+                    video.view_count = statistics.viewCount;
+                }
+                return video;
+            }),
+            is_fetching: false
+        };
+    case YOUTUBE.FETCH_VIDEO_STATISTICS_FAILURE:
+        return { ...state, is_fetching: false };
     }
 };
 
@@ -81,6 +112,11 @@ const youtube = (state = initialState, action) => {
     case YOUTUBE.FETCH_COMMENTS_SUCCESS:
     case YOUTUBE.FETCH_COMMENTS_FAILURE:
         return comments(state, action);
+    // video statistics
+    case YOUTUBE.FETCH_VIDEO_STATISTICS_REQUEST:
+    case YOUTUBE.FETCH_VIDEO_STATISTICS_SUCCESS:
+    case YOUTUBE.FETCH_VIDEO_STATISTICS_FAILURE:
+        return video_statistics(state, action);
     // handle replay list
     case YOUTUBE.ADD_REPLAY_LIST:
     case YOUTUBE.DELETE_REPLAY_LIST:

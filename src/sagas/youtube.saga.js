@@ -38,12 +38,28 @@ function* handleFetchVideoComment() {
     }
 }
 
+function* handleFetchVideoStatistics() {
+    for(;;) {
+        const action = yield take(YOUTUBE.FETCH_VIDEO_STATISTICS_REQUEST);
+        const response = yield call(ajax.getVideoStatistics, action.payload.video_id);
+        switch (response.status) {
+        case 200:
+            yield put(youtube.fetchVideoStatistics.success(response.data, action.payload.replay_index));
+            break;
+        default:
+            yield toastr.error('失敗', '通信失敗');
+            yield put(youtube.fetchVideoStatistics.failure());
+        }
+    }
+}
+
 function* handleAddReplayList() {
     for(;;) {
         const action = yield take(YOUTUBE.ADD_REPLAY_LIST);
         const count = yield select(getReplayListCount);
         const video = yield select(getVideoByIndex(action.payload.video_index));
         yield put(youtube.fetchComments.request(video.video_id, count - 1));
+        yield put(youtube.fetchVideoStatistics.request(video.video_id, count - 1));
     }
 }
 
@@ -51,6 +67,7 @@ function* youtubeSaga() {
     yield all([
         fork(handleFetchChannelVideo),
         fork(handleFetchVideoComment),
+        fork(handleFetchVideoStatistics),
         fork(handleAddReplayList)
     ]);
 }

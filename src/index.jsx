@@ -6,8 +6,8 @@ import ReduxToastr from 'react-redux-toastr';
 import 'node_modules/react-redux-toastr/src/styles/index.scss';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearch, faThumbsUp, faThumbsDown, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-library.add(faSearch, faThumbsUp, faThumbsDown, faTimesCircle);
+import { faSearch, faThumbsUp, faThumbsDown, faTimesCircle, faEye, faComment } from '@fortawesome/free-solid-svg-icons';
+library.add(faSearch, faThumbsUp, faThumbsDown, faTimesCircle, faEye, faComment);
 
 import Search from 'Containers/search/';
 import ReplayList from 'Containers/replay_list/';

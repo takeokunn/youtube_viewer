@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp, faThumbsDown, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsUp, faThumbsDown, faTimesCircle, faEye, faComment } from '@fortawesome/free-solid-svg-icons';
 
 import Icon from 'Assets/icon.png';
 import styles from './replay_block.css';
@@ -37,23 +37,33 @@ class ReplayBlock extends React.Component {
                         allow="autoplay; encrypted-media"
                         allowFullScreen></iframe>
                 </div>
-                <div className={ styles.side }>
-                    <ul className={ styles.ul }>
-                        { ::this.renderComments() }
+                <div className={ styles.info }>
+                    <div>
+                        <p>{ this.props.title }</p>
+                        <p>{ this.props.description }</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <FontAwesomeIcon icon={ faEye } />
+                            <span>{ parseInt(this.props.view_count).toLocaleString() }</span>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon={ faComment } />
+                            <span>{ parseInt(this.props.comment_count).toLocaleString() }</span>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon={ faThumbsUp } />
+                            <span>{ parseInt(this.props.like_count).toLocaleString() }</span>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon={ faThumbsDown } />
+                            <span>{ parseInt(this.props.dislike_count).toLocaleString() }</span>
+                        </li>
                     </ul>
-                    <ul className={ styles.info }>
-                        <li className={ styles.li }>
-                            <span className={ styles.good }>
-                                <FontAwesomeIcon icon={ faThumbsUp } />
-                            </span>
-                            <span>15000</span>
-                        </li>
-                        <li className={ styles.li }>
-                            <span className={ styles.bad }>
-                                <FontAwesomeIcon icon={ faThumbsDown } />
-                            </span>
-                            <span>800</span>
-                        </li>
+                </div>
+                <div className={ styles.comment }>
+                    <ul>
+                        { ::this.renderComments() }
                     </ul>
                 </div>
             </div>
@@ -63,7 +73,15 @@ class ReplayBlock extends React.Component {
 
 ReplayBlock.propTypes = {
     index: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     video_id: PropTypes.string.isRequired,
+    comments: PropTypes.array.isRequired,
+    comment_count: PropTypes.any,
+    dislike_count: PropTypes.any,
+    favorite_count: PropTypes.any,
+    like_count: PropTypes.any,
+    view_count: PropTypes.any,
     handleClose: PropTypes.func.isRequired
 }
 
