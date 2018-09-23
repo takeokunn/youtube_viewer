@@ -1,12 +1,144 @@
 {
     "data": [
         {
-            "channel_id": "UCFTVNLC7ysej-sD5lkLqNGA",
-            "name": "木下ゆうか"
+            "type": "multi",
+            "channels": [
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAy1wllX4bGzqkfSPsMfoNP1KjkxITleO9SElQ=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCFTVNLC7ysej-sD5lkLqNGA",
+                    "name": "木下ゆうか"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAy1wllX4bGzqkfSPsMfoNP1KjkxITleO9SElQ=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCZf__ehlCEBPop-_sldpBUQ",
+                    "name": "HikakinTV"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAyv2ecmjBJUSy8d-N8GeVDLJ03dwvHfp3Z3xg=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCgMPP6RRjktV7krOfyUewqw",
+                    "name": "はじめしゃちょー"
+                }
+            ]
         },
         {
-            "channel_id": "UCZf__ehlCEBPop-_sldpBUQ",
-            "name": "ヒカキン"
+            "type": "game",
+            "channels": [
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAy1wllX4bGzqkfSPsMfoNP1KjkxITleO9SElQ=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UC0ppHLRB01LKsXoQNEI4qtQ",
+                    "name": "SRGAME"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAwPBjyoi5dKot9W4BnxEITxzKtLsEQUjOUoGg=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UC4bSJdI2RTNSld1_M_liO0w",
+                    "name": "ラッシー"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAw8xnHB32SH5ks6ydwOiplmu58cgQmLvpYIrw=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCzXjPL7zo0bxhOYDxLJ9YEg",
+                    "name": "ポッキー"
+                }
+            ]
+        },
+        {
+            "type": "beauty",
+            "channels": [
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAyolVZUCS50cICSTlObcreQHOHwl-8zelCQRA=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCfCY70zRsvnnKzQ39mBq0rw",
+                    "name": "sasakiasahi"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAwvYgen6GgJyb4zE_UFlULpBu-AtXOTyVrQaA=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "TSWmC5J5ams",
+                    "name": "くまみき"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAyo4JUCEI-GgOIWMy5r_kddfEI_fYQLMRLwTg=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UC__AsSnEuyVgO9TWvZE_ziA",
+                    "name": "SekineRisa"
+                }
+            ]
+        },
+        {
+            "type": "creative",
+            "channels": [
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAw3AJ192dnX3rzkyXfaDDKUbxZCRKgzPRYzaw=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCgeaaH-K9-SLzMljthC9cwA",
+                    "name": "ABTVnetwork"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAwyF7LZ-JdmH7cXzXfmUE9CfMRVSyr1oUscBQ=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCGD6cybImXigcLw2VSwHMBg",
+                    "name": "HiROKi"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAxJiJB9BhH0XbA2zQEiyH9keJK_cgx74zKyZA=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCbZFgAVRN3PDZV0O6Ma-c6Q",
+                    "name": "0踏切アニメ0ふみっきー君チャンネル"
+                }
+            ]
+        },
+        {
+            "type": "hobby",
+            "channels": [
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAzZML3qRHr_fEffMpr3xp7NpKk8Ti1i5sN4Lw=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCkGf_kXNiDG_nXs4-WJkY-Q",
+                    "name": "レオンチャンネル"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAwGBJIjywsoJn9rKzVPaAhxWnQ3AfUzON1C=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCL9ibMKcDtK4qc6e9Go9mCg",
+                    "name": "k2eizo"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAw_qrQNReweESOOsuTI48twszhukdk8gHc8ig=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCtLo4nwb3ObCDZ4m8b8u7fA",
+                    "name": "LOVECARS!TV!"
+                }
+            ]
+        },
+        {
+            "type": "kids",
+            "channels": [
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAxCk_fyMjjek-3BNFXe5_Ms0zqHgsH5iANayQ=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCskAt0JUUCrHqutdfLXSb-w",
+                    "name": "aiudesk"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAz0JabB1Yd4gastREBeJZp12d-0w2ne84u98A=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCQubp91ICvNsh4gdzIKyKkA",
+                    "name": "カードキングダム"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAzkLqAdJ2sZ9lpT1lFj0mSRK9UsdNgkzdxKkg=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UC17_aMbsbwtzpa4-SUlDEOw",
+                    "name": "70cleam"
+                }
+            ]
+        },
+        {
+            "type": "foreign",
+            "channels": [
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAzs2SnthzQrYz-9-uzjVo3dyFuMkoh6r1PvdA=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCCBq7s8VOCyek275uvq5lYQ",
+                    "name": "三原JAPAN Sanyuan_JAPAN"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAxVgwQ3rcLSV2T0K9AONuybIhRZkjgAkSUTxg=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UCV_S2S-Zs8LeuJxK-T3RQQg",
+                    "name": "黃氏兄弟"
+                },
+                {
+                    "image_url": "https://yt3.ggpht.com/a-/AN66SAzhF2ZZV0lUKVSZ5Q2fJD11VZgw_AKZpTAkHA=s288-mo-c-c0xffffffff-rj-k-no",
+                    "channel_id": "UC99AIUi4psZ98Khq_qU5Hpw",
+                    "name": "盛夏微涼 Ryo."
+                }
+            ]
         }
     ]
 }

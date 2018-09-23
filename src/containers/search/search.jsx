@@ -8,7 +8,7 @@ import options from 'Options/youtuber.json';
 class Search extends React.Component {
 
     componentDidMount() {
-        const channel_id = options.data[0].channel_id;
+        const channel_id = options.data[0].channels[0].channel_id;
         this.props.fetchChannelVideo(channel_id);
     }
 
@@ -18,7 +18,15 @@ class Search extends React.Component {
     }
 
     renderOptions() {
-        return options.data.map((elem, index) => <option key={ `search_${index}` } value={ elem.channel_id }>{ elem.name }</option>);
+        return options.data.map((elem, outer_index) => {
+            return elem.channels.map((channel, inner_index) => (
+                <option
+                    key={ `search_${outer_index}_${inner_index}` }
+                    value={ channel.channel_id }>
+                    { channel.name }
+                </option>
+            ));
+        });
     }
 
     render() {
