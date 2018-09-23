@@ -1,4 +1,4 @@
-import { put, fork, take, call, all, select } from 'redux-saga/effects';
+import { fork, take, all } from 'redux-saga/effects';
 
 import { TEST }  from 'Constants/action_type.constant';
 

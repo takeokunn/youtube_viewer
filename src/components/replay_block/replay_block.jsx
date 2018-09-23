@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown, faTimesCircle, faEye, faComment } from '@fortawesome/free-solid-svg-icons';
 
-import Icon from 'Assets/icon.png';
 import styles from './replay_block.css';
 
 class ReplayBlock extends React.Component {
@@ -83,6 +82,6 @@ ReplayBlock.propTypes = {
     like_count: PropTypes.any,
     view_count: PropTypes.any,
     handleClose: PropTypes.func.isRequired
-}
+};
 
 export default ReplayBlock;

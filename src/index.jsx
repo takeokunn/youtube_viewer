@@ -22,7 +22,7 @@ import configureStore from 'Store';
 const store = configureStore();
 store.runSaga(sagas);
 
-render(
+render((
     <Provider store={ store }>
         <main>
             <ReplayList />
@@ -40,4 +40,4 @@ render(
                 closeOnToastrClick />
         </main>
     </Provider>
-, document.getElementById('root'));
+), document.getElementById('root'));

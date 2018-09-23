@@ -9,7 +9,7 @@ const INITIAL_WINDOW = {
     HEIGHT: 800
 };
 
-process.on('uncaughtException', err => console.log('uncaughtException occured'));
+process.on('uncaughtException', () => console.log('uncaughtException occured'));
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit();

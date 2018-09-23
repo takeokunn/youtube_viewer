@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './replay_list.css';
 import ReplayBlock from 'Components/replay_block/replay_block';
@@ -6,7 +7,6 @@ import ReplayBlock from 'Components/replay_block/replay_block';
 class ReplayList extends React.Component {
 
     renderReplayBlock() {
-        console.log(this.props.youtube.replay_videos)
         return this.props.youtube.replay_videos.map((video, index) => (
             <ReplayBlock
                 key={ index }
@@ -32,5 +32,10 @@ class ReplayList extends React.Component {
         );
     }
 }
+
+ReplayList.propTypes = {
+    youtube: PropTypes.object.isRequired,
+    handleClose: PropTypes.func.isRequired
+};
 
 export default ReplayList;
