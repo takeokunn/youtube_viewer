@@ -1,7 +1,7 @@
 .block {
+    overflow-y: scroll;
     height: calc(100vh - 20px);
     padding: 10px 5px;
-    overflow-y: scroll;
 }
 
 .block::-webkit-scrollbar {

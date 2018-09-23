@@ -1,10 +1,10 @@
 .block {
-    position: relative;
     display: flex;
-    margin: 0 10px 20px 10px;
-    height: 310px;
+    position: relative;
     width: calc(100% - 20px);
-    border: 1px solid #EBEBEB;
+    height: 310px;
+    margin: 0 10px 20px 10px;
+    border: 1px solid #ebebeb;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -39,41 +39,42 @@
 .info {
     width: 200px;
     height: 100%;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #dddddd;
 }
 
 .info > div {
-    padding: 10px 5px;
-    height: calc(100% - 70px);
     overflow-y: scroll;
+    height: calc(100% - 70px);
+    padding: 10px 5px;
 }
 
 .info > div > p:first-of-type {
+    margin-top: 0;
     font-size: 12px;
     font-weight: bold;
-    margin-top: 0;
     word-wrap: break-word;
 }
 
 .info > div > p:last-of-type {
-    font-size: 10px;
     margin-top: 0;
+    font-size: 10px;
     word-wrap: break-word;
 }
 
 .info > ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 50px;
     list-style-type: none;
-    padding: 0;
-    margin: 0;
     width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+
+    grid-template-columns: 1fr 1fr;
 }
 
 .info > ul > li {
-    font-size: 10px;
     padding: 5px 0 0 20px;
+    font-size: 10px;
 }
 
 .info > ul > li > span {
@@ -81,7 +82,7 @@
 }
 
 .heart {
-    color: #FF5A5F;
+    color: #ff5a5f;
 }
 
 /**
@@ -93,11 +94,11 @@
 }
 
 .comment > ul {
-    height: 100%;
     overflow-y: scroll;
     list-style: none;
-    padding-left: 0;
+    height: 100%;
     margin: 0;
+    padding-left: 0;
 }
 
 .comment > ul::-webkit-scrollbar {
