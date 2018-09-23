@@ -1,6 +1,6 @@
 import { TEST }  from 'Constants/action_type.constant';
 
-const initialState = {}
+const initialState = {};
 
 const test = (state = initialState, action) => {
     switch (action.type) {

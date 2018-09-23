@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './movie_list.css';
 import MovieBlock from 'Components/movie_block/movie_block';
@@ -13,7 +14,7 @@ class MovieList extends React.Component {
                 title={ video.title }
                 thumbnail_url={ video.thumbnail_url }
                 handleClick={ this.props.addToReplayList } />
-        ))
+        ));
     }
 
     render() {
@@ -24,5 +25,10 @@ class MovieList extends React.Component {
         );
     }
 }
+
+MovieList.propTypes = {
+    youtube: PropTypes.object.isRequired,
+    addToReplayList: PropTypes.func.isRequired
+};
 
 export default MovieList;

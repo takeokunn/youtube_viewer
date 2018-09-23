@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './movie_block.css';
 
@@ -30,6 +28,6 @@ MovieBlock.propTypes = {
     title: PropTypes.string.isRequired,
     thumbnail_url: PropTypes.string.isRequired,
     handleClick: PropTypes.func.isRequired
-}
+};
 
 export default MovieBlock;

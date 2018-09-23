@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './search.css';
@@ -35,5 +36,9 @@ class Search extends React.Component {
         );
     }
 }
+
+Search.propTypes = {
+    fetchChannelVideo: PropTypes.func.isRequired
+};
 
 export default Search;

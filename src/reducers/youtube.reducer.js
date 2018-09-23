@@ -37,18 +37,16 @@ const comments = (state, action) => {
     case YOUTUBE.FETCH_COMMENTS_REQUEST:
         return { ...state, is_fetching: true };
     case YOUTUBE.FETCH_COMMENTS_SUCCESS:
-        const replay_index = action.payload.replay_index;
-        const data = action.payload.data;
         return {
             ...state,
             replay_videos: state.replay_videos.map((video, index) => {
+                const replay_index = action.payload.replay_index;
+                const data = action.payload.data;
                 if (index === replay_index) {
-                    video.comments = data.items.map(item => {
-                        return {
-                            image_url: item.snippet.topLevelComment.snippet.authorProfileImageUrl,
-                            text: item.snippet.topLevelComment.snippet.textOriginal
-                        }
-                    })
+                    video.comments = data.items.map(item => ({
+                        image_url: item.snippet.topLevelComment.snippet.authorProfileImageUrl,
+                        text: item.snippet.topLevelComment.snippet.textOriginal
+                    }));
                 }
                 return video;
             }),
@@ -64,11 +62,11 @@ const video_statistics = (state, action) => {
     case YOUTUBE.FETCH_VIDEO_STATISTICS_REQUEST:
         return { ...state, is_fetching: true };
     case YOUTUBE.FETCH_VIDEO_STATISTICS_SUCCESS:
-        const replay_index = action.payload.replay_index;
-        const statistics = action.payload.data.items[0].statistics;
         return {
             ...state,
             replay_videos: state.replay_videos.map((video, index) => {
+                const replay_index = action.payload.replay_index;
+                const statistics = action.payload.data.items[0].statistics;
                 if (index === replay_index) {
                     video.comment_count = statistics.commentCount;
                     video.dislike_count = statistics.dislikeCount;

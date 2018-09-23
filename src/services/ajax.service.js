@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://www.googleapis.com/youtube/v3'
+axios.defaults.baseURL = 'https://www.googleapis.com/youtube/v3';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
