@@ -52,11 +52,13 @@
     font-size: 12px;
     font-weight: bold;
     margin-top: 0;
+    word-wrap: break-word;
 }
 
 .info > div > p:last-of-type {
     font-size: 10px;
     margin-top: 0;
+    word-wrap: break-word;
 }
 
 .info > ul {
