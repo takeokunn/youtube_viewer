@@ -1,9 +1,13 @@
 import { YOUTUBE }  from 'Constants/action_type.constant';
 
-const initialState = {
+import { storage } from 'Services/';
+
+const initial_replay_videos = JSON.parse(storage.playlist.get()) || [];
+
+const initial_state = {
     is_fetching: false,
     search_videos: [],
-    replay_videos: []
+    replay_videos: initial_replay_videos
 };
 
 const channel_video = (state, action) => {
@@ -86,11 +90,13 @@ const video_statistics = (state, action) => {
 const handle_replay_list = (state, action) => {
     switch (action.type) {
     case YOUTUBE.ADD_REPLAY_LIST:
+        storage.playlist.set(JSON.stringify([...state.replay_videos, state.search_videos[action.payload.video_index]]));
         return {
             ...state,
             replay_videos: [...state.replay_videos, state.search_videos[action.payload.video_index]]
         };
     case YOUTUBE.DELETE_REPLAY_LIST:
+        storage.playlist.set(JSON.stringify(state.replay_videos.filter((video, index) => index != action.payload.replay_index)));
         return {
             ...state,
             replay_videos: state.replay_videos.filter((video, index) => index != action.payload.replay_index)
@@ -98,7 +104,7 @@ const handle_replay_list = (state, action) => {
     }
 };
 
-const youtube = (state = initialState, action) => {
+const youtube = (state = initial_state, action) => {
     switch (action.type) {
     // channel_video
     case YOUTUBE.FETCH_CHANNEL_VIDEO_REQUEST:

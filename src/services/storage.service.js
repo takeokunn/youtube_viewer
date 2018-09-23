@@ -1,4 +1,8 @@
-const KEY_NAME ='TAKEOKUNN_YOUTUBE_VIEWER';
+const KEY = {
+    PLAYLIST: 'KEY_PLAYLIST'
+};
 
-export const get = () => localStorage.get(KEY_NAME);
-export const set = data => localStorage.set(KEY_NAME, data);
+export const playlist = {
+    get: () => localStorage.getItem(KEY.PLAYLIST),
+    set: data => localStorage.setItem(KEY.PLAYLIST, data)
+};
