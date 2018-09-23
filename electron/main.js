@@ -17,7 +17,13 @@ app.on('window-all-closed', () => {
 
 const create_browser_window = () => {
     if (mainWindow !== null) return;
-    mainWindow = new BrowserWindow({ width: INITIAL_WINDOW.WIDTH, height: INITIAL_WINDOW.HEIGHT });
+    mainWindow = new BrowserWindow({
+        width: INITIAL_WINDOW.WIDTH,
+        height: INITIAL_WINDOW.HEIGHT,
+        webPreferences: {
+            nodeIntegration : false
+        }
+    });
     mainWindow.loadURL('file://' + __dirname + '/../public/index.html');
     mainWindow.on('closed', () => mainWindow = null);
 };
