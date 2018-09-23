@@ -5,3 +5,6 @@ public/*
 !public/index.html
 
 .env
+
+release/*
+!release/.gitkeep
