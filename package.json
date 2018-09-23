@@ -1,7 +1,7 @@
 {
   "name": "youtube_viewer",
   "version": "1.0.0",
-  "description": "",
+  "description": "effective youtube viewer written in javascript(๑╹ω╹๑ )",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/takeokunn/youtube_viewer.git"
   },
-  "author": "",
+  "author": "takeokunn",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/takeokunn/youtube_viewer/issues"
@@ -21,7 +21,6 @@
   "homepage": "https://github.com/takeokunn/youtube_viewer#readme",
   "devDependencies": {
     "@babel/core": "^7.1.0",
-    "@babel/plugin-proposal-function-bind": "^7.0.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
