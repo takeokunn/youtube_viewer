@@ -1,7 +1,7 @@
 .block {
-    height: calc(100% - 45px);
     overflow-y: scroll;
-    border: 1px solid #EBEBEB;
+    height: calc(100% - 45px);
+    border: 1px solid #ebebeb;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
