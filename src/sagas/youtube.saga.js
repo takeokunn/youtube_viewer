@@ -1,10 +1,11 @@
 import { toastr } from 'react-redux-toastr';
 import { put, fork, take, call, all, select } from 'redux-saga/effects';
 
-import { youtube } from 'Actions/';
+import { youtube, storage } from 'Actions/';
 import { ajax } from 'Services/';
 import { YOUTUBE } from 'Constants/action_type.constant';
 
+const getReplayList = state => state.youtube.replay_videos;
 const getReplayListCount = state => state.youtube.replay_videos.length;
 const getVideoByIndex = index => state => state.youtube.search_videos[index];
 
@@ -30,6 +31,8 @@ function* handleFetchVideoComment() {
         switch (response.status) {
         case 200:
             yield put(youtube.fetchComments.success(response.data, action.payload.replay_index));
+            const data = yield select(getReplayList);
+            yield put(storage.playlist(data));
             break;
         default:
             yield toastr.error('失敗', '通信失敗');
@@ -45,6 +48,8 @@ function* handleFetchVideoStatistics() {
         switch (response.status) {
         case 200:
             yield put(youtube.fetchVideoStatistics.success(response.data, action.payload.replay_index));
+            const data = yield select(getReplayList);
+            yield put(storage.playlist(data));
             break;
         default:
             yield toastr.error('失敗', '通信失敗');

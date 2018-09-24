@@ -95,7 +95,6 @@ const handle_replay_list = (state, action) => {
             replay_videos: [...state.replay_videos, state.search_videos[action.payload.video_index]]
         };
     case YOUTUBE.DELETE_REPLAY_LIST:
-        storage.playlist.set(JSON.stringify(state.replay_videos.filter((video, index) => index != action.payload.replay_index)));
         return {
             ...state,
             replay_videos: state.replay_videos.filter((video, index) => index != action.payload.replay_index)

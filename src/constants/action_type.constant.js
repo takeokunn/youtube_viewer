@@ -24,3 +24,8 @@ export const YOUTUBE = {
     ADD_REPLAY_LIST: 'YOUTUBE_ADD_REPLAY_LIST',
     DELETE_REPLAY_LIST: 'YOUTUBE_DELETE_REPLAY_LIST',
 };
+
+export const STORAGE = {
+    // store playlist
+    PLAYLIST: 'STORAGE_PLAYLIST'
+};
