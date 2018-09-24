@@ -90,7 +90,6 @@ const video_statistics = (state, action) => {
 const handle_replay_list = (state, action) => {
     switch (action.type) {
     case YOUTUBE.ADD_REPLAY_LIST:
-        storage.playlist.set(JSON.stringify([...state.replay_videos, state.search_videos[action.payload.video_index]]));
         return {
             ...state,
             replay_videos: [...state.replay_videos, state.search_videos[action.payload.video_index]]

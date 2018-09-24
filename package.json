@@ -8,7 +8,7 @@
     "eslint": "eslint -c .config/.eslintrc.js src/**/*.js src/**/*.jsx electron/**/*.js",
     "csscomb": "csscomb -c .config/.csscomb.json src/",
     "dev": "npm run dev-webpack & npm run electron-build",
-    "dev-web": "npm run dev-webpack & npm run dev-serve",
+    "dev:web": "npm run dev-webpack & npm run dev-serve",
     "dev-webpack": "webpack -w",
     "dev-serve": "webpack-serve --config webpack.config.js",
     "release": "npm run electron-packager",
