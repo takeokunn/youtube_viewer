@@ -1,8 +1,8 @@
 import { TEST }  from 'Constants/action_type.constant';
 
-const initialState = {};
+const initial_state = {};
 
-const test = (state = initialState, action) => {
+const test = (state = initial_state, action) => {
     switch (action.type) {
     case TEST.ACTION:
         return { ...state };
