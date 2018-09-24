@@ -32,7 +32,7 @@ function* handleFetchVideoComment() {
         case 200:
             yield put(youtube.fetchComments.success(response.data, action.payload.replay_index));
             const data = yield select(getReplayList);
-            yield put(storage.playlist(data))
+            yield put(storage.playlist(data));
             break;
         default:
             yield toastr.error('失敗', '通信失敗');
@@ -49,7 +49,7 @@ function* handleFetchVideoStatistics() {
         case 200:
             yield put(youtube.fetchVideoStatistics.success(response.data, action.payload.replay_index));
             const data = yield select(getReplayList);
-            yield put(storage.playlist(data))
+            yield put(storage.playlist(data));
             break;
         default:
             yield toastr.error('失敗', '通信失敗');
