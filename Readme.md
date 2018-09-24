@@ -9,6 +9,7 @@ Youtube Viewer built on Electron.
 $ git clone https://github.com/takeokunn/youtube_viewer
 $ cd youtube_viewer
 $ npm i
+$ cp .env.sample .env // edit
 $ npm run dev
 ```
 
