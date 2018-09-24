@@ -1,3 +1,9 @@
+// for service worker
+import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+const registration = runtime.register();
+registration.then(register => register.update());
+
+// for web application
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';

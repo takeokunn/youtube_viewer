@@ -1,5 +1,6 @@
 const path = require('path');
 const dotenv = require('dotenv-webpack');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -55,6 +56,7 @@ module.exports = {
         content: [path.resolve(__dirname, 'public')]
     },
     plugins: [
-        new dotenv()
+        new dotenv(),
+        new ServiceWorkerWebpackPlugin({ entry: path.join(__dirname, 'src/sw.js') })
     ]
 };

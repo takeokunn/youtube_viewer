@@ -1,5 +1,5 @@
 const KEY = {
-    PLAYLIST: 'KEY_PLAYLIST'
+    PLAYLIST: 'KEY_PLAYLIST_V1'
 };
 
 export const playlist = {
