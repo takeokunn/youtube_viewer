@@ -3,11 +3,13 @@ body {
     background-color: #fdfdfd;
     color: #484848;
     font-family: Circular, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', 'MS Gothic', 'ＭＳ ゴシック', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+
     -webkit-font-smoothing: antialiased;
 }
 
 main {
     display: grid;
     height: 100vh;
+
     grid-template-columns: 4fr 1fr;
 }
