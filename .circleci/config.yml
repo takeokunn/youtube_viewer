@@ -21,11 +21,6 @@ jobs:
     working_directory: ~/workspace
     steps:
       - checkout
-      - run:
-          name: Set up git.
-          command: |
-            git config --global user.name "takeokunn"
-            git config --global user.email "bararararatty@gmail.com"
       - run: cd ~/workspace
       - run:
           name: Set up env.
