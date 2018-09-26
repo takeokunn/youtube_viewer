@@ -34,7 +34,6 @@ jobs:
           name: Restore npm cache
           keys:
             - npm-{{ checksum "package.json" }}
-      - run: npm i -g npm
       - run: npm install
       - save_cache:
           name: Store npm cache
