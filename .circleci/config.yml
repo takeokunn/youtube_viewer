@@ -21,7 +21,12 @@ jobs:
     working_directory: ~/workspace
     steps:
       - checkout
-      - run: cd ${HOME}/workspace
+      - run:
+        command: |
+          git config --global user.name "takeokunn"
+          git config --global user.email "bararararatty@gmail.com"
+      - run: cd ~/workspace
+      - run: echo ${DOTENV} | base64 --decode > .env
       - restore_cache:
           name: Restore npm cache
           keys:
