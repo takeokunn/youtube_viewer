@@ -4,6 +4,7 @@ node_modules/
 public/*
 !public/index.html
 !public/icon.png
+!public/.circleci
 
 .env
 

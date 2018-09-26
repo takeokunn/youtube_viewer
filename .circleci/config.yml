@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/workspace
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:latest
     steps:
       - checkout
       - restore_cache:
@@ -15,3 +15,42 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: npm run test
+  deploy:
+    machine:
+      enabled: true
+    working_directory: ~/workspace
+    steps:
+      - checkout
+      - run:
+          name: Set up git.
+          command: |
+            git config --global user.name "takeokunn"
+            git config --global user.email "bararararatty@gmail.com"
+      - run: cd ~/workspace
+      - run:
+          name: Set up env.
+          command: echo ${DOTENV} | base64 --decode > .env
+      - restore_cache:
+          name: Restore npm cache
+          keys:
+            - npm-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          name: Store npm cache
+          key: npm-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Deploy.
+          command: npm run deploy
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: /^master$/
