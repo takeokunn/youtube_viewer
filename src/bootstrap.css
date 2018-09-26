@@ -11,5 +11,5 @@ main {
     display: grid;
     height: 100vh;
 
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 4fr 200px;
 }
