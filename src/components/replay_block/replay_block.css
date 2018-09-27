@@ -125,4 +125,5 @@
 .comment > ul > li > div > p {
     margin: 0;
     font-size: 10px;
+    word-wrap: break-word;
 }
