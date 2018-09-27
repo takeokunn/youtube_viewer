@@ -7,7 +7,7 @@ import { faThumbsUp, faThumbsDown, faTimesCircle, faEye, faComment } from '@fort
 import styles from './replay_block.css';
 
 const regExp = /(https?:\/\/\S+)/g;
-const replaceCb = (match, index) => <a href={ match } target='_blank' rel='noopener noreferrer'>{ match }</a>;
+const replaceCb = match => <a href={ match } target='_blank' rel='noopener noreferrer'>{ match }</a>;
 
 const convertNaNToNumber = num => isNaN(num)? 0 : num;
 
