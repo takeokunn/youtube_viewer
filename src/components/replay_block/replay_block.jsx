@@ -9,6 +9,8 @@ import styles from './replay_block.css';
 const regExp = /(https?:\/\/\S+)/g;
 const replaceCb = match => <a href={ match } target='_blank' rel='noopener noreferrer'>{ match }</a>;
 
+const convertNaNToNumber = num => isNaN(num)? 0 : num;
+
 class ReplayBlock extends React.Component {
 
     handleClose() {
@@ -56,11 +58,11 @@ class ReplayBlock extends React.Component {
                         </li>
                         <li>
                             <FontAwesomeIcon icon={ faThumbsUp } />
-                            <span>{ parseInt(this.props.like_count).toLocaleString() }</span>
+                            <span>{ convertNaNToNumber(parseInt(this.props.like_count)).toLocaleString() }</span>
                         </li>
                         <li>
                             <FontAwesomeIcon icon={ faThumbsDown } />
-                            <span>{ parseInt(this.props.dislike_count).toLocaleString() }</span>
+                            <span>{ convertNaNToNumber(parseInt(this.props.dislike_count)).toLocaleString() }</span>
                         </li>
                     </ul>
                 </div>
