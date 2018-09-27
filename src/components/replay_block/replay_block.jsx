@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import reactStringReplace from "react-string-replace";
+import reactStringReplace from 'react-string-replace';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown, faTimesCircle, faEye, faComment } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './replay_block.css';
 
 const regExp = /(https?:\/\/\S+)/g;
-const replaceCb = match => <a href={ match } target="_blank">{ match }</a>;
+const replaceCb = match => <a href={ match } target='_blank' rel='noopener noreferrer'>{ match }</a>;
 
 class ReplayBlock extends React.Component {
 
