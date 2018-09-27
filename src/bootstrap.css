@@ -13,3 +13,7 @@ main {
 
     grid-template-columns: 4fr 200px;
 }
+
+a {
+    color: #008489;
+}

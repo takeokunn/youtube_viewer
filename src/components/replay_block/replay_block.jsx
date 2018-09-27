@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import reactStringReplace from 'react-string-replace';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown, faTimesCircle, faEye, faComment } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './replay_block.css';
+
+const regExp = /(https?:\/\/\S+)/g;
+const replaceCb = match => <a href={ match } target='_blank' rel='noopener noreferrer'>{ match }</a>;
 
 class ReplayBlock extends React.Component {
 
@@ -16,7 +20,7 @@ class ReplayBlock extends React.Component {
             <li key={ index }>
                 <img src={ comment.image_url } />
                 <div>
-                    <p>{ comment.text }</p>
+                    <p>{ reactStringReplace(comment.text, regExp, replaceCb)  }</p>
                 </div>
             </li>
         ));
@@ -39,7 +43,7 @@ class ReplayBlock extends React.Component {
                 <div className={ styles.info }>
                     <div>
                         <p>{ this.props.title }</p>
-                        <p>{ this.props.description }</p>
+                        <p>{ reactStringReplace(this.props.description, regExp, replaceCb) }</p>
                     </div>
                     <ul>
                         <li>
