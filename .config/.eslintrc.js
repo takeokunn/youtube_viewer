@@ -48,6 +48,7 @@ module.exports = {
             "always"
         ],
         "no-console": 0,
-        "no-case-declarations": 0
+        "no-case-declarations": 0,
+        "react/display-name": 0
     }
 };

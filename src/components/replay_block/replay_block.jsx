@@ -7,7 +7,7 @@ import { faThumbsUp, faThumbsDown, faTimesCircle, faEye, faComment } from '@fort
 import styles from './replay_block.css';
 
 const regExp = /(https?:\/\/\S+)/g;
-const replaceCb = match => <a href={ match } target='_blank' rel='noopener noreferrer'>{ match }</a>;
+const replaceCb = locale => match => <a key={ `replay_block_${locale}_${match}` } href={ match } target='_blank' rel='noopener noreferrer'>{ match }</a>;
 
 const convertNaNToNumber = num => isNaN(num)? 0 : num;
 
@@ -22,7 +22,7 @@ class ReplayBlock extends React.Component {
             <li key={ index }>
                 <img src={ comment.image_url } />
                 <div>
-                    <p>{ reactStringReplace(comment.text, regExp, replaceCb)  }</p>
+                    <p>{ reactStringReplace(comment.text, regExp, replaceCb('comment'))  }</p>
                 </div>
             </li>
         ));
@@ -45,7 +45,7 @@ class ReplayBlock extends React.Component {
                 <div className={ styles.info }>
                     <div>
                         <p>{ this.props.title }</p>
-                        <p>{ reactStringReplace(this.props.description, regExp, replaceCb) }</p>
+                        <p>{ reactStringReplace(this.props.description, regExp, replaceCb('description')) }</p>
                     </div>
                     <ul>
                         <li>
