@@ -14,7 +14,7 @@
     "release": "npm run electron-packager",
     "electron-build": "electron .",
     "electron-packager": "electron-packager . youtube_viewer --platform=darwin --arch=x64 --icon=electron/icon.icns --out=release",
-    "deploy": "webpack && gh-pages -d public"
+    "deploy": "webpack && gh-pages --dist public --depth 2 --dotfiles true"
   },
   "repository": {
     "type": "git",
