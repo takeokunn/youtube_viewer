@@ -9,7 +9,7 @@ class ReplayList extends React.Component {
     renderReplayBlock() {
         return this.props.youtube.replay_videos.map((video, index) => (
             <ReplayBlock
-                key={ index }
+                key={ video.video_id }
                 index={ index }
                 title={ video.title }
                 description={ video.description }
