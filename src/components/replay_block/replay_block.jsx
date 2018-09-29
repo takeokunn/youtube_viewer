@@ -13,6 +13,10 @@ const convertNaNToNumber = num => isNaN(num)? 0 : num;
 
 class ReplayBlock extends React.Component {
 
+    shouldComponentUpdate() {
+        return false;
+    }
+
     handleClose() {
         this.props.handleClose(this.props.index);
     }
