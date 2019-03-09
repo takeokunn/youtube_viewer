@@ -1,4 +1,8 @@
-var serviceWorkerOption = {"assets":["/bundle.js"]};
+var serviceWorkerOption = {
+  "assets": [
+    "/bundle.js"
+  ]
+};
         
         /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
