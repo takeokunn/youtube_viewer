@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    env_file: .env
+    ports:
+      - "12333:2333"
+    command: "npm run koa"
